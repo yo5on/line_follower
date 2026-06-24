@@ -1,115 +1,141 @@
-# 🚗 PID Line Follower Robot
+# 🚗 High-Speed PID Line Follower Robot
 
-A high-speed **PID-based Line Follower Robot** built using the **ESP32 NodeMCU** and an **8-array IR sensor**. The robot uses a PID (Proportional-Integral-Derivative) control algorithm to achieve smooth and accurate line tracking at high speeds.
-
----
-
-## 📌 Features
-
-- High-speed line following using PID control
-- 8-array IR sensor for precise line detection
-- Differential drive with N20 geared motors
-- Adjustable PID parameters for tuning
-- Sensor calibration and start buttons
-- Compact and competition-ready design
+A high-speed line follower robot built using the ESP32 NodeMCU and an 8-array IR sensor. The robot uses a PID (Proportional-Integral-Derivative) control algorithm to achieve smooth and accurate line tracking.
 
 ---
 
-## 🛠️ Components Used
+## 📸 Project Images
+
+| Robot | Chassis |
+|--------|----------|
+| ![](pic1.jpeg) | ![](chasis.jpeg) |
+
+---
+
+## ✨ Features
+
+- PID-based line following
+- High-speed operation
+- ESP32-based controller
+- Supports sharp turns
+- Adjustable PID parameters
+- Uses analog IR sensor readings
+
+---
+
+## 🛠 Components Used
 
 | Component | Quantity |
-|-----------|-----------|
-| ESP32 NodeMCU (38-pin) | 1 |
+|------------|-----------|
+| ESP32 NodeMCU | 1 |
 | TB6612FNG Motor Driver | 1 |
-| Smart ELX RLS08 (8-Array IR Sensor) | 1 |
-| Smart ELX 8-Channel Multiplexer | 1 |
-| N20 DC Gear Motors (6V, 600 RPM) | 2 |
-| Wheels | 2 |
-| Caster Wheel | 1 |
-| 3.7V Li-ion Batteries | 2 |
-| MP1584 Buck Converter | 1 |
-| HW133A Buck Converter | 1 |
-| Push Buttons | 2 |
-| Capacitors (2200 µF and 0.1 µF) | As Required |
-| Robot Chassis and Connecting Wires | 1 Set |
+| N20 Motors | 4 |
+| 8-Array IR Sensor | 1 |
+| Smart ELX Multiplexer | 1 |
+| 7.4V Li-ion Battery | 1 |
+| Buck Converter | 2 |
+| Chassis | 1 |
 
 ---
 
-## ⚙️ Working Principle
-
-1. The 8-array IR sensor continuously reads the track.
-2. The ESP32 calculates the position error.
-3. The PID controller computes the correction value.
-4. The TB6612FNG adjusts motor speeds accordingly.
-5. The robot follows the line smoothly with minimal oscillation.
-
----
-
-## 🔋 Power Distribution
-
-- **Battery:** 7.4V (2 × 3.7V Li-ion cells)
-- **Motor Driver (VM):** Connected directly to the battery.
-- **ESP32:** Powered through a buck converter regulated to 5V.
-
----
-
-## 🔌 Pin Connections
-
-### Motor Driver Connections
-
-| TB6612FNG Pin | ESP32 GPIO |
-|--------------|-------------|
-| PWMA | 4 |
-| AIN1 | 17 |
-| AIN2 | 16 |
-| PWMB | 21 |
-| BIN1 | 18 |
-| BIN2 | 19 |
-| STBY | 5 |
-
-### Multiplexer Connections
-
-| Multiplexer Pin | ESP32 GPIO |
-|----------------|-------------|
-| S0 | 27 |
-| S1 | 26 |
-| S2 | 25 |
-| Signal | 33 |
-
-### Buttons
-
-| Function | ESP32 GPIO |
-|----------|-------------|
-| Start Button | 13 |
-| Calibration Button | 14 |
-
----
-
-## 🎯 PID Parameters
+## ⚙ PID Parameters
 
 ```cpp
-double Kp = 65;
-double Ki = 0.003;
-double Kd = 18;
+Kp = 65;
+Ki = 0.003;
+Kd = 18;
 ```
 
-> These values may need tuning depending on the track and robot speed.
+These values can be adjusted depending on the track.
 
 ---
 
-## 🚀 Future Improvements
+## 🔌 Wiring Diagram
 
-- Automatic PID tuning
-- Junction and maze solving
-- Wireless parameter tuning using Bluetooth/Wi-Fi
-- OLED display for debugging and calibration
+![](wiring.jpeg)
+
+---
+
+## 📂 Repository Structure
+
+```
+line_follower/
+│
+├── code.ino
+├── README.md
+├── wiring.jpeg
+├── chasis.jpeg
+├── pic1.jpeg
+├── pic2.jpeg
+└── components
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/yo5on/line_followER.git
+```
+
+### 2. Open in Arduino IDE
+
+Open:
+
+```
+code.ino
+```
+
+### 3. Install Required Libraries
+
+- ESP32 Board Package
+- Wire Library
+
+### 4. Upload the Code
+
+1. Connect ESP32.
+2. Select the correct COM port.
+3. Upload the sketch.
+
+---
+
+## 🧠 Working Principle
+
+1. IR sensors detect the position of the line.
+2. The ESP32 calculates the error.
+3. The PID controller generates correction values.
+4. Motor speeds are adjusted accordingly.
+5. The robot continuously follows the line.
+
+---
+
+## 📊 Formula
+
+```
+PID Output =
+(Kp × Error) +
+(Ki × Integral) +
+(Kd × Derivative)
+```
+
+---
+
+## 🔮 Future Improvements
+
+- Auto PID tuning
+- Maze solving algorithm
+- Junction detection
+- Bluetooth tuning interface
+- OLED debugging display
 
 ---
 
 ## 👨‍💻 Author
 
-yo5on
+**Yo5on**
 
-Built for robotics competitions and high-speed autonomous navigation.
+Robotics and Embedded Systems Enthusiast
 
-⭐ If you like this project, don't forget to star the repository!
+⭐ If you like this project, consider giving it a star!
