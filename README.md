@@ -29,10 +29,10 @@ A high-speed line follower robot built using the ESP32 NodeMCU and an 8-array IR
 |------------|-----------|
 | ESP32 NodeMCU | 1 |
 | TB6612FNG Motor Driver | 1 |
-| N20 Motors | 4 |
+| N20 Motors | 2 |
 | 8-Array IR Sensor | 1 |
 | Smart ELX Multiplexer | 1 |
-| 7.4V Li-ion Battery | 1 |
+| 3.7V Li-ion Battery | 2 |
 | Buck Converter | 2 |
 | Chassis | 1 |
 
