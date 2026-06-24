@@ -1,0 +1,16 @@
+| Component                        | Quantity    |
+| -------------------------------- | ----------- |
+| ESP32 NodeMCU (38-pin)           | 1           |
+| TB6612FNG Motor Driver           | 1           |
+| 8-Array IR Sensor Module         | 1           |
+| Smart ELX RLS08 Sensor Board     | 1           |
+| Smart ELX 8-Channel Multiplexer  | 1           |
+| N20 DC Gear Motors (6V, 600 RPM) | 2           |
+| Wheels                           | 2           |
+| Caster Wheel                     | 1           |
+| 3.7V Li-ion Batteries            | 2           |
+| MP1584 Buck Converter            | 1           |
+| HW133A Buck Converter            | 1           |
+| Push Buttons                     | 2           |
+| Capacitors (2200 µF and 0.1 µF)  | As required |
+| Connecting Wires and Chassis     | 1 Set       |
